@@ -1,0 +1,91 @@
+.prescription-detail {
+  padding: 1rem;
+}
+
+.prescription-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.prescription-body {
+  margin-bottom: 2rem;
+}
+
+.prescription-body h3 {
+  color: #2c3e50;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.medicines-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.medicines-table th,
+.medicines-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.medicines-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.medicines-table td small {
+  color: #666;
+}
+
+.prescription-footer {
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .prescription-header {
+    grid-template-columns: 1fr;
+  }
+  
+  .search-filters {
+    flex-direction: column;
+  }
+  
+  .search-filters input,
+  .search-filters select {
+    width: 100%;
+  }
+  
+  .appointment-actions {
+    flex-direction: column;
+  }
+  
+  .appointment-actions .btn {
+    width: 100%;
+  }
+}

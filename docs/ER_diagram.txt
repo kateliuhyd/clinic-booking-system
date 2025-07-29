@@ -1,0 +1,52 @@
+ENTITIES AND RELATIONSHIPS:
+
+[Patient] ----<registers>---- [User]
+    |                           |
+    |                           |
+<books/cancels>            <authenticates>
+    |                           |
+    v                           v
+[Appointment] ----<scheduled_at>---- [TimeSlot]
+    |                                    |
+    |                                    |
+<results_in>                      <managed_by>
+    |                                    |
+    v                                    v
+[Prescription] ----<prescribed_by>---- [Doctor] ----<belongs_to>---- [Department]
+    |                                    |                              |
+    |                                    |                              |
+<contains>                         <specializes_in>              <has_head>
+    |                                    |                              |
+    v                                    v                              v
+[Medicine]                        [Specialization]                  [Doctor]
+    |
+    |
+<stored_in>
+    |
+    v
+[MedicalRecord] ----<belongs_to>---- [Patient]
+    |
+    |
+<reviewed_in>
+    |
+    v
+[Review] ----<written_by>---- [Patient]
+    |
+    |
+<about>
+    |
+    v
+[Doctor]
+
+CARDINALITIES:
+- User (1) ---- (1) Patient/Doctor (ISA relationship)
+- Patient (1) ---- (M) Appointment
+- Doctor (1) ---- (M) Appointment
+- Doctor (1) ---- (M) TimeSlot
+- Appointment (1) ---- (0,1) Prescription
+- Prescription (1) ---- (M) Medicine (through PrescriptionMedicine)
+- Patient (1) ---- (M) MedicalRecord
+- Patient (1) ---- (M) Review
+- Doctor (1) ---- (M) Review
+- Department (1) ---- (M) Doctor
+- Doctor (M) ---- (M) Specialization (through DoctorSpecialization)
